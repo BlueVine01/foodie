@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@import 'tailwindcss';
+
+body {
+    @apply font-family-nunito;
+}
+
+@theme {
+    --font-family-nunito: "Nunito", sans-serif;
+    --color-primary: #f03328;
+    --color-secondary: #ff9e0c;
+    --color-secondary-100: #fef4e5;
+    --color-blacken: #2d2d2d;
+    --color-grey: #666;
+    --color-grey-100: #e1e1e1;
+    --color-grey-200: #5c5c5c;
+}
+
+.nav-link {
+    @apply text-lg font-normal duration-300;
+}
+.nav-link:hover {
+    @apply text-primary border-b-2 border-primary;
+}
+.swiper-pagination {
+    @apply text-primary;
+}
+
+.active {
+    @apply border-b-2 border-primary;
+}
+@layer components {
+    .btn-primary {
+        border: 1px solid var(--color-primary);
+        border-radius: calc(infinity * 1px);
+        background-color: var(--color-white);
+        padding-inline: --spacing(5);
+        padding-block: --spacing(2);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-primary);
+        transition: all ease-in-out 0.3s;
+        &:hover {
+            @media (hover: hover) {
+                background-color: var(--color-primary);
+                color: var(--color-white);
+            }
+        }   
+    }
+    .btn-main {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding-inline: --spacing(5);
+        padding-block: --spacing(2);
+        font-weight: var(--font-weight-semibold);
+        border-radius: calc(infinity * 1px);
+        &:hover {
+            @media (hover: hover) {
+                background-color: var(--color-white);
+                color: var(--color-primary);
+                border: 1px solid var(--color-primary);
+            }
+        }
+    }
+}
+
